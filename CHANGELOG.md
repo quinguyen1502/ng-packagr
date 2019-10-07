@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.6.1](https://github.com/ng-packagr/ng-packagr/compare/v5.6.0...v5.6.1) (2019-10-07)
+
+
+### Bug Fixes
+
+* support pug ([ee11a35](https://github.com/ng-packagr/ng-packagr/commit/ee11a35))
+* support pug ([ebdff3f](https://github.com/ng-packagr/ng-packagr/commit/ebdff3f))
+
 ## [5.6.0](https://github.com/ng-packagr/ng-packagr/compare/v5.5.1...v5.6.0) (2019-10-07)
 
 
