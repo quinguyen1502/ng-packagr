@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.6.0](https://github.com/ng-packagr/ng-packagr/compare/v5.5.1...v5.6.0) (2019-10-07)
+
+
+### Bug Fixes
+
+* disable internal `emitDecoratorMetadata` ([d0bf507](https://github.com/ng-packagr/ng-packagr/commit/d0bf507))
+* support the ng-package.json in secondary entry points ([#1406](https://github.com/ng-packagr/ng-packagr/issues/1406)) ([8b97bfa](https://github.com/ng-packagr/ng-packagr/commit/8b97bfa))
+* update @angular/cdk to version ~8.2.0 ([0007fef](https://github.com/ng-packagr/ng-packagr/commit/0007fef))
+
+
+### Features
+
+* copies `CHANGELOG.md` to package destination ([db5ad68](https://github.com/ng-packagr/ng-packagr/commit/db5ad68))
+
 ### [5.5.1](https://github.com/ng-packagr/ng-packagr/compare/v5.5.0...v5.5.1) (2019-09-14)
 
 
