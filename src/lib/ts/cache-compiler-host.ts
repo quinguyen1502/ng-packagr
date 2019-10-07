@@ -1,12 +1,20 @@
 import * as ts from 'typescript';
 import * as ng from '@angular/compiler-cli';
 import * as path from 'path';
+import * as log from '../util/log';
+import pug from 'pug';
 import { ensureUnixPath } from '../util/path';
 import { StylesheetProcessor } from '../ng-v5/entry-point/resources/stylesheet-processor';
 import { EntryPointNode, fileUrl } from '../ng-v5/nodes';
 import { Node } from '../brocc/node';
 import { BuildGraph } from '../brocc/build-graph';
 import { FileCache } from '../file/file-cache';
+
+const pugProcessor = (filePath: string, content: string): string => {
+  // Render pug
+  log.debug(`rendering pug from ${filePath}`);
+  return pug.render(content, { doctype: 'html', filename: filePath });
+};
 
 export function cacheCompilerHost(
   graph: BuildGraph,
@@ -114,7 +122,9 @@ export function cacheCompilerHost(
       const cache = sourcesFileCache.getOrCreate(fileName);
       if (cache.content === undefined) {
         cache.content = compilerHost.readFile.call(this, fileName);
-        if (!/(html|htm|svg)$/.test(path.extname(fileName))) {
+        if (/(pug|jade)$/.test(path.extname(fileName))) {
+          cache.content = pugProcessor(fileName, cache.content);
+        } else if (!/(html|htm|svg)$/.test(path.extname(fileName))) {
           cache.content = stylesheetProcessor.process(fileName, cache.content);
         }
         cache.exists = true;
