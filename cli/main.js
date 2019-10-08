@@ -4,9 +4,9 @@ import * as program from 'commander';
 import * as path from 'path';
 import * as updateNotifier from 'update-notifier';
 import * as readPkgUp from 'read-pkg-up';
-import { execute, build, version } from '../public_api';
+import { execute, build, version } from '../src/public_api';
 
-const DEFAULT_PROJECT_PATH = path.resolve(process.cwd(), 'ng-package.json');
+const DEFAULT_PROJECT_PATH = path.resolve(process.cwd(), 'src/ng-package.json');
 
 function parseProjectPath(parsed: string): string {
   return parsed || DEFAULT_PROJECT_PATH;
